@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacto</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color:#646B63!important;">
+    <a class="navbar-brand" href="#" style="color:white;">HOME-INT</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" >
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto"  >
+            <li class="nav-item active">
+                <a class="nav-link" href="" style="color:white;">Datos de la empresa</a>
+            </li>              <li class="nav-item">
+            <a class="nav-link" href="" style="color:#D0D3D4 ;">Vision</a>
+        </li>              <li class="nav-item">
+            <a class="nav-link" href="" style="color:#D0D3D4 ;">Mision</a>
+        </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('home') }}" style="color:#D0D3D4 ;">Home</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<form action="/contacto" method="post">
+    <div class="form-row">
+        <label for="nom_empresa">Nombre de la Empresa</label>
+    </div>
+    <div class="form-row">
+        <div class="col">
+            <input type="text" class="form-control" name="nom_empresa" id="nom_empresa" placeholder="Nombre de la Empresa">
+        </div>
+    </div>
+    <div class="form-row">
+        <label for="tel">Telefonos</label>
+    </div>
+    <div class="form-row">
+        <div class="col">
+            <input type="tel" class="form-control" name="tel" id="tel" placeholder="495-999-99999">
+        </div>
+        <div class="col">
+            <input type="tel" class="form-control" name="tel2" id="tel2" placeholder="495-999-99999">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="direccion">Dirección</label>
+        <input type="text" class="form-control" name="direccion" id="direccion" placeholder="Calle y número">
+    </div>
+    <div class="form-group">
+        <label for="colonia">Colonia</label>
+        <input type="text" class="form-control" name="colonia" id="colonia" placeholder="Colonia">
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="ciudad">Ciudad</label>
+            <input type="text" class="form-control" name="ciudad" id="ciudad" placeholder="Ciudad">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="estado">Estado</label>
+            <select name="estado" id="estado" class="form-control">
+                <option selected>Choose...</option>
+                <option>Aguascalientes</option>
+                <option>Baja California</option>
+                <option>Baja California Sur</option>
+                <option>Campeche</option>
+                <option>Coahuila</option>
+                <option>Colima</option>
+                <option>Chiapas</option>
+                <option>Ciudad de México</option>
+                <option>Durango</option>
+                <option>Guanajuato</option>
+                <option>Guerrero</option>
+                <option>Hidalgo</option>
+                <option>Jalisco</option>
+                <option>México</option>
+                <option>Michaocan</option>
+                <option>Morelos</option>
+                <option>Nayarit</option>
+                <option>Nuevo León</option>
+                <option>Oaxaca</option>
+                <option>Puebla</option>
+                <option>Queretaro</option>
+                <option>Quintana Roo</option>
+                <option>San Luis Potosi</option>
+                <option>Sinaloa</option>
+                <option>Sonora</option>
+                <option>Tabasco</option>
+                <option>Tamaulipas</option>
+                <option>Tlaxcala</option>
+                <option>Veracruz</option>
+                <option>Yucatan</option>
+                <option>Zacatecas</option>
+            </select>
+        </div>
+        <div class="form-group col-md-2">
+            <label for="codpos">Codigo Postal</label>
+            <input type="text" class="form-control" name="codpos" id="codpos">
+        </div>
+        <div class="form-group col-md-2">
+            <label for="rfc">RFC  Registro Federal de Contribuyentes</label>
+            <input type="text" class="form-control" name="rfc" id="rfc" placeholder="VECJ880326">
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary" style="background:lightseagreen">Agrega Contacto</button>
+    <button type="reset" class="btn btn-primary" style="background:lightseagreen">Borrar Informacion</button>
+</form>
+
+</body>
