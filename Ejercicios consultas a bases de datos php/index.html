@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Little Caesars 4 - Consultas</title>
+</head>
+<body>
+	<h2><center>Sistema de personal en Little Caesars 4</center></h2>
+	
+	<center><h5>Podras eliminar, actualizar, insertar, buscar clientes y sucursales</h5></center>
+	<h3>CLIENTES</h3>
+	<form action="consultas.php" method="POST">
+		<h4>Elimina un cliente</h4>
+		<label>Ingresa el nombre del cliente</label><br><br>
+		<input type="text" name="eliminar_cliente"><br><br>
+		<input type="submit" name="eliminar_cliente_boton" value="Eliminar">
+	</form>
+
+	<form action="consultas.php" method="POST">
+		<h4>Actualiza un cliente</h4>
+		<label>Ingresa el celular  del cliente</label><br>
+		<input type="text" name="celular_cliente"><br>
+		<label>Ingresa el Nombre correcto para poder actualizar  al cliente</label><br>
+		<input type="text" name="nombre_cliente_actualiza"><br><br>
+		<input type="submit" name="actualiza_cliente_boton" value="Actualizar">
+	</form>
+
+	<form action="consultas.php" method="POST">
+		<h4>Inserta un cliente</h4>
+		<label>Ingresa el nombre del cliente</label><br>
+		<input type="text" name="nombre_cliente_insertar"><br>
+		<label>Ingresa el apellido paterno del cliente</label><br>
+		<input type="text" name="paterno_cliente_insertar"><br>
+		<label>Ingresa el apellido materno del cliente</label><br>
+		<input type="text" name="materno_cliente_insertar"><br>
+		<label>Ingresa la edad del cliente</label><br>
+		<input type="text" name="edad_cliente_insertar"><br>
+		<label>Ingresa el celular del cliente</label><br>
+		<input type="text" name="celular_cliente_insertar"><br>
+		<label>Ingresa la sucursal del cliente</label><br>
+		<input type="text" name="sucursal_cliente_insertar"><br><br>
+		<input type="submit" name="insertar_cliente_boton" value="Eliminar">
+	</form>
+
+	<h3>SUCURSAL</h3>
+	<form action="consultas.php" method="POST">
+		<h4>Elimina una sucursal</h4>
+		<label>Ingresa el nombre del cliente en la sucursal</label><br><br>
+		<input type="text" name="eliminar_cliente"><br><br>
+		<input type="submit" name="eliminar_cliente_boton_sucursal" value="Eliminar">
+	</form>
+
+	<form action="consultas.php" method="POST">
+		<h4>Actualiza un cliente de la sucursal</h4>
+		<label>Ingresa la sucursal  del cliente para actualizar</label><br>
+		<input type="text" name="sucursal_cliente"><br>
+		<label>Ingresa el Nombre correcto para poder actualizar  al cliente de la sucursal</label><br>
+		<input type="text" name="nombre_cliente_actualiza"><br><br>
+		<input type="submit" name="actualiza_cliente_boton_sucursal" value="Actualizar">
+	</form>
+
+	<form action="consultas.php" method="POST">
+		<h4>Inserta una sucursal</h4>
+		<label>Ingresa el nombre de la sucursal</label><br>
+		<input type="text" name="nombre_sucursal_insertar"><br>
+		<label>Ingresa el Nombre  del cliente</label><br>
+		<input type="text" name="nombre_cliente_insertar"><br>
+		<label>Ingresa el apellido paterno del cliente</label><br>
+		<input type="text" name="paterno_cliente_insertar">
+		<br><br>
+		<input type="submit" name="insertar_cliente_boton_sucursal" value="Eliminar">
+	</form>
+
+	
+</body>
+</html>
