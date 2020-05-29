@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<body style="background-color:#D5DBDB;">
+<link rel="stylesheet" href="static/css/tabla2.css" />
+<a href="/perfil_agr" class="btn btn-success" style="background:lightseagreen">Agregar Perfil</a>
+<center><h3 style="color:#FFFFFF;"><font color="black">Perfiles Registrados</font></h3></center>
+      <table width="100%" border="1" cellpadding="0" cellspacing="0" bordercolor="#000000">
+          <div id="main-container">
+       <tbody>
+        <tr>
+          <td  bgcolor="#FFFFFF" bgcolor="#465F5A" valign="top">
+            <table width="100%" border="1" cellpadding="0" cellspacing="0" bordercolor="#000000">
+              <thead>
+                <tr>
+                  <td >Descripcion</td>
+                  <td >Nivel Academico</td>
+                  <td >Carrera</td>
+                  <td >Puesto</td>
+                  <td >Idioma</td>
+                    <td ></td>
+                    <td ></td>
+                </tr>
+              </thead>
+              <tbody>
+                {% for dato in datos %}
+                  <tr>
+                    <td>
+                      {{ dato.1 }}
+                    </td>
+                       <td>
+                      {{ dato.2 }}
+                    </td>
+                       <td>
+                      {{ dato.3 }}
+                    </td>
+                       <td>
+                      {{ dato.4 }}
+                    </td>
+                    <td>
+                      {{ dato.5 }}
+                    </td>
+                    <td width="60">
+                      <center><a href="/ed_perfil/{{dato.0}}" >Editar</a></center>
+                    </td>
+                    <td  width="60">
+                      <center><a href="/bo_perfil/{{dato.0}}" >Borrar</a></center>
+                    </td>
+
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+           <script type="text/javascript" src="/static/js/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="/static/js/popper.min.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+          </div>
+    </table>
+
+
+
+
+{% endblock %}

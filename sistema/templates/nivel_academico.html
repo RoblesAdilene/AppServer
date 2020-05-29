@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<head>
+	<title>Carrera </title>
+</head>
+
+<body style="background-color:#D5DBDB;">
+
+          <form action="/nivel_agr" method="post">
+              <div class="form-row">
+                     <h2>Agregar Nivel Academico</h2>
+              </div>
+        <div class="form-row">
+          <label for="descripcion">Descripcion</label>
+          <input type="text" class="form-control" name="descripcion" id="descripcion" >
+        </div>
+    <br>
+    <button type="submit" class="btn btn-primary" style="background:lightseagreen">Agregar</button>
+<script type="text/javascript" src="/static/js/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="/static/js/popper.min.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+          </form>
+</body>
+{% endblock %}
+

@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<body style="background-color:#D5DBDB;">
+<h2>Editar Nivel Academico</h2>
+            <form action="/modifica_nivel/{{nivel.0}}" method="post">
+              <div class="form-row">
+                  <label for="descripcion">Descripción</label>
+              </div>
+              <div class="form-row">
+                <div class="col">
+                    <input type="text" class="form-control" name="descripcion" id="descripcion" placeholder="descripcion" value="{{nivel.1}}">
+                </div>
+              </div>
+                <br>
+              <button type="submit" class="btn btn-primary" style="background:lightseagreen">Enviar Cambios</button>
+                <script type="text/javascript" src="/static/js/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="/static/js/popper.min.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+            </form>
+</body>
+
+{% endblock %}

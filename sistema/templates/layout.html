@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+    <link rel="stylesheet" href="\static\css\bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>HOME-INT</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #646B63!important;">
+    <img src="/static/img/logo_f.png" height="80" width="80">
+    <a class="navbar-brand" href="#"><font color="white">Home-Int</font></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <main class="container">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto" >
+                <li class="nav-item active">
+                    <div class="dropdown mb-3">
+                        <a href="" class="btn btn-secondary dropdown-toggle" role="button" id="catalogos"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="background-color: lightseagreen!important;">
+                            Catalogo del Sistema
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="catalogos">
+                            <a href="/agr_datos_nivel_academico" class="dropdown-item">Nivel  Academico</a>
+                            <a href="/agr_datos_carrera" class="dropdown-item">Carrera</a>
+                            <a href="/agr_datos_idioma" class="dropdown-item">Idioma</a>
+                            <a href="/agr_datos_habilidad" class="dropdown-item">Habilidad</a>
+                            <a href="/agr_datos_area" class="dropdown-item">Area</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="/puesto" class="dropdown-item">Puesto</a>
+                            <a href="/agr_datos_publicidad" class="dropdown-item">Medio de Publicidad</a>
+                            <a href="/agr_datos_contacto" class="dropdown-item">Contacto</a>
+                            <a href="/candidato" class="dropdown-item">Candidato</a>
+                            <a href="/agr_datos_empresa" class="dropdown-item">Datos de la Empresa</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarNav2">
+            <ul class="navbar-nav ml-auto" >
+                <li class="nav-item active">
+        <div class="dropdown mb-3">
+                        <a href="" class="btn btn-secondary dropdown-toggle" role="button" id="Empresa"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="background-color: lightseagreen!important;">
+                            Procesos de la Empresa
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="Empresa">
+                            <a href="/solicitud" class="dropdown-item">Solicitud de personal</a>
+                            <a href="/autoriza_solicitud" class="dropdown-item">Autorizacion de Solicitud</a>
+                            <a href="/a_publicar" class="dropdown-item">Publicacion de Ofertas</a>
+                            <a href="#" class="dropdown-item">Captura de solicitantes</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </main>
+    <div class="collapse navbar-collapse" id="navbarNav1">
+        <ul class="navbar-nav ml-auto" >
+            <li class="nav-item">
+                <a class="nav-link" href="/"><font color="white">Home</font></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+</body>
+{% block content %}
+{% endblock %}
+
+

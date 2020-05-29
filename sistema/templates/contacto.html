@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% block content %}
+<head>
+
+</head>
+<body style="background-color:#D5DBDB;">
+<form action="/contacto_agr" method="post">
+<h2>Agregar Contacto</h2>
+
+<div class="form-row">
+    <label for="nombre">Nombre de la empresa</label>
+</div>
+
+<div class="form-row">
+    <div class="col">
+        <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre de la empresa">
+    </div>
+</div>
+
+<div class="form-row">
+    <label for="dom">Domicilio</label>
+</div>
+<div class="form-row">
+    <div class="col">
+        <input type="text" class="form-control" name="dom" id="dom" placeholder="Domicilio">
+    </div>
+</div>
+
+<div class="form-row">
+    <label for="razon">Razon Social</label>
+</div>
+<div class="form-row">
+    <div class="col">
+        <input type="text" class="form-control" name="razon" id="razon" placeholder="Razon Social">
+    </div>
+</div>
+
+<div class="form-row">
+    <label for="tel">Telefono</label>
+</div>
+<div class="form-group col-md-2">
+    <div class="col">
+        <input type="text" class="form-control" name="tel" id="tel" placeholder="Telefono">
+    </div>
+</div>
+
+<button type="submit" class="btn btn-primary" style="background-color: lightseagreen!important;">Agregar</button>
+
+
+<script type="text/javascript" src="/static/js/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="/static/js/popper.min.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+</form>
+  {% endblock %}
+</body>
+

@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<head>
+    <title>HOME-INT</title>
+</head>
+<body>
+<form action="/datos_empresa_agr" method="post">
+<h1>Datos de la empresa</h1>
+    <div class="form-row">
+        <label for="nom_empresa">Nombre de la Empresa</label>
+    </div>
+    <div class="form-row">
+        <div class="col">
+            <input type="text" class="form-control" name="nom_empresa" id="nom_empresa" placeholder="Nombre de la Empresa">
+        </div>
+    </div>
+
+    <div class="form-row">
+        <label for="descripcion">Descripcion</label>
+    </div>
+    <div class="form-row">
+        <div class="col">
+            <input type="text" class="form-control" name="descripcion" id="descripcion" placeholder="Descripcion">
+        </div>
+    </div>
+
+    <div class="form-row">
+        <label for="estructura_juridica">Estructura Juridica</label>
+    </div>
+    <div class="form-row">
+        <div class="col">
+            <input type="text" class="form-control" name="estructura_juridica" id="estructura_juridica" placeholder="Estructura Juridica">
+        </div>
+    </div>
+
+    <div class="form-row">
+        <label for="razon_social">Razon Social</label>
+    </div>
+    <div class="form-row">
+        <div class="col">
+            <input type="text" class="form-control" name="razon_social" id="razon_social" placeholder="Razon Social">
+        </div>
+    </div>
+
+    <div class="form-group col-md-2">
+            <label for="correo">Direccion de Correo Electronico  </label>
+            <input type="email" class="form-control" name="correo" id="correo" placeholder="nombre@ejemplo.com">
+        </div>
+
+    <div class="form-group">
+        <label for="domicilio">Domicilio</label>
+        <input type="text" class="form-control" name="domicilio" id="domicilio" placeholder="Domicilio">
+    </div>
+
+    <div class="form-row">
+        <label for="tel">Telefonos</label>
+    </div>
+    <div class="form-row">
+        <div class="col">
+            <input type="tel" class="form-control" name="tel" id="tel" placeholder="495-999-99999">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="encargado">Encargado</label>
+        <input type="text" class="form-control" name="encargado" id="encargado" placeholder="Encargado">
+    </div>
+
+    <div class="form-group">
+        <label for="CIF">CIF de Empresa</label>
+        <input type="text" class="form-control" name="CIF" id="CIF" placeholder="CIF de Empresa">
+    </div>
+    <button type="submit" class="btn btn-primary" style="background:lightseagreen">Agrega</button>
+<script type="text/javascript" src="/static/js/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="/static/js/popper.min.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<body style="background-color:#D5DBDB;">
+<h2>Editar Habilidad</h2>
+<form action="/modifica_habilidad/{{habs.0}}" method="post">
+ <script type="text/javascript" src="/static/js/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="/static/js/popper.min.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+
+<div class="form-row">
+ <label for="descripcion">Descripcion</label>
+</div>
+
+<div class="form-row">
+ <div class="col">
+ <input type="text" class="form-control" name="descripcion" id="descripcion" placeholder="Descripcion" value="{{habs.1}}">
+ </div>
+</div>
+<br>
+<button type="submit" class="btn btn-primary" style="background-color: lightseagreen!important;">Enviar Cambios</button>
+ </form>
+</body>
+{% endblock %}

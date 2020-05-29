@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+{% block content %}
+<body style="background-color:#D5DBDB;">
+<link rel="stylesheet" href="\static\css\tabla2.css">
+<center><h3>Solicitudes</h3></center>
+<div id="main-container">
+    <table width="100%" border="1" cellpadding="0" cellspacing="0" bordercolor="#000000">
+        <tbody>
+        <tr>
+            <td color="FFFFFF" bgcolor="#465F5A" valign="top">
+               <table width="100%" border="1" cellpadding="0" cellspacing="0" bordercolor="#000000">
+                    <thead>
+                    <tr>
+                        <td color="white" bgcolor="006666"><font color="white">Fecha</font></td>
+                        <td color="white" bgcolor="006666"><font color="white">Area</font></td>
+                        <td color="white" bgcolor="006666"><font color="white">Puesto</font></td>
+                        <td color="white" bgcolor="006666"><font color="white">Vacantes</font></td>
+                        <td color="white" bgcolor="006666"><font color="white">Estado</font></td>
+                        <td color="white" bgcolor="006666"><font color="white"></font></td>
+                        <td color="white" bgcolor="006666"><font color="white"></font></td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for solicitud in solicitudes %}
+                    <tr>
+                        <td>
+                            {{ solicitud.1 }}
+                        </td>
+                        <td>
+                            {{ solicitud.3 }}
+                        </td>
+                        <td>
+                            {{ solicitud.5 }}
+                        </td>
+                        <td>
+                            {{ solicitud.6 }}
+                        </td>
+                        <td>
+                            {{ solicitud.8 }}
+                        </td>
+                        {% if solicitud.7==1 %}
+                            <td bgcolor="#9C9C9C" width="60">
+                                <center><a href="/aut_solicitud/{{solicitud.0}}"class="btn btn-success" style="background:lightseagreen">Autorizar</a></center>
+                            </td>
+                            <td bgcolor="#BFBFBF" width="60">
+                                <center><a href="/can_solicitud/{{solicitud.0}}" class="btn btn-success" style="background:lightseagreen">Cancelar</a></center>
+                            </td>
+                        {% else %}
+                             <td bgcolor="#9C9C9C" width="60">
+                                <center><a href="/solicitud/{{solicitud.0}}"class="btn btn-success" style="background:lightseagreen">---</a></center>
+                            </td>
+                            <td bgcolor="#BFBFBF" width="60">
+                                <center><a href="/solicitud/{{solicitud.0}}"class="btn btn-success" style="background:lightseagreen">---</a></center>
+                            </td>
+                        {% endif %}
+
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        </tbody>
+        <script type="text/javascript" src="/static/js/jquery-3.2.1.slim.min.js"></script>
+        <script type="text/javascript" src="/static/js/popper.min.js"></script>
+        <script type="text/javascript" src="/static/js/bootstrap.min.js"></script></table>
+</div>
+</body>
+{% endblock %}

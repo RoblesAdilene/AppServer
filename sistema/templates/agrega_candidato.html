@@ -1,0 +1,192 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<head>
+    <title>HOME-INT</title>
+</head>
+<body style="background-color:#D5DBDB;">
+<br>
+<form action="/candidato_agr" method="post">
+<h2>Agregar Candidato</h2>
+    <script type="text/javascript" src="/static/js/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="/static/js/popper.min.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+    <div class="form-row">
+        <div class="form-group col-md-2">
+            <label for="curp">CURP</label>
+        <input type="text" class="form-control" name="curp" id="curp" placeholder="CURP">
+        </div>
+        <div class="form-group col-md-9">
+            <label for="nombre">AP. Paterno    Ap.Materno    Nombre(s)</label>
+            <input type="text" class="form-control" name="nombre" id="nombre" placeholder="AP. Paterno    Ap.Materno    Nombre(s)">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-7">
+            <label for="domicilio">Domicilio</label>
+            <input type="text" class="form-control" name="domicilio" id="domicilio" placeholder="Calle y No. - Colonia - Cod. Postal">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="rfc">RFC</label>
+            <input type="text" class="form-control" name="rfc" id="rfc" placeholder="0101010101">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-2">
+            <label for="telefono">Telefono</label>
+        <input type="text" class="form-control" name="telefono" id="telefono" placeholder="999-999-9999">
+        </div>
+        <div class="form-group col-md-3">
+            <label for="correoe">Correo Electronico</label>
+            <input type="email" class="form-control" name="correoe" id="correoe" placeholder="correo@gmail.com">
+        </div>
+
+        <div class="form-group col-md-1">
+            <label for="edad">Edad</label>
+        <input type="text" class="form-control" name="edad" id="edad" placeholder="edad">
+        </div>
+        <div class="form-group col-md-1">
+            <label for="nss">N.S.S</label>
+            <input type="text" class="form-control" name="nss" id="nss" placeholder="N.S.S">
+        </div>
+        <div class="form-group col-md-2">
+            <label for="sexo">Sexo</label>
+            <select name="sexo" id="sexo" class="form-control">
+                <option value="0">Choose...</option>
+                <option value="F">Femenino</option>
+                <option value="M">Masculino</option>
+            </select>
+        </div>
+        <div class="form-group col-md-2">
+            <label for="edociv">E. Civil</label>
+            <select name="edociv" id="edociv" class="form-control">
+                <option value="0">Choose...</option>
+                {% for estado in ecivil %}
+                    <option value="{{ estado.0 }}">{{ estado.1 }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary" style="background:lightseagreen">Agregar</button>
+</form>
+
+<!-- -----------------------------------------------------------------  -->
+<br>
+<center><h3>Habilidades asociadas</h3></center>
+<link rel="stylesheet" href="\static\css\tabla2.css">
+<div class="panel panel-primary">
+    <div class="panel-heading" >
+        <form class="form-inline" action="/agrega_hab_can" method="post">
+            <div class="form-row">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="hidden" name="can" id="can" value="{{candidatos.0[0]}}">
+                <label for="habil">Habilidad</label> &nbsp;&nbsp;&nbsp;
+                <select name="habil" id="habil" class="form-control">
+                    <option value="0" selected>Choose...</option>
+                    {% for hab in habs %}
+                    <option value="{{ hab.0 }}">{{ hab.1 }}</option>
+                    {%   endfor %}
+                </select>&nbsp;&nbsp;&nbsp;
+                <label for="expe">Experiencia</label>&nbsp;&nbsp;&nbsp;
+                <input type="text" class="form-control" name="expe" id="expe" placeholder="tiempo de experiencia">&nbsp;&nbsp;&nbsp;
+            </div>&nbsp;&nbsp;&nbsp;
+            <button type="submit" class="btn btn-primary">Agrega habilidad</button>
+        </form>
+    </div>
+    <br>
+    <div class="panel-body">
+        <center>
+            <table width="80%" border="1" cellpadding="0" cellspacing="0" bordercolor="#000000">
+                <thead>
+                <tr>
+                    <td color="white" bgcolor="black">Habilidad</td>
+                    <td color="white" bgcolor="black">Experiencia</td>
+                    <td color="white" bgcolor="black"></td>
+                </tr>
+                </thead>
+                <tbody>
+                {% for candidato in can_habs %}
+                <tr>
+                    <td>
+                        {{ candidato.2 }}
+                    </td>
+                    <td>
+                        {{ candidato.5 }}
+                    </td>
+                    <td  bgcolor="#3C3EC5" width="60">
+                        <center><a href="/bo_hab_candidato/{{candidato.0}}/{{candidato.4}}" style="color:#FFFF00;">Borrar</a></center>
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </center>
+    </div>
+</div>
+<center><h3>Definición del candidato</h3></center>
+<form action="/agrega_candidato" method="post">
+<div class="form-group col-md-2">
+            <label for="curp">CURP</label>
+        <input type="text" class="form-control" name="curp" id="curp" placeholder="CURP">
+        </div>
+        <div class="form-group col-md-9">
+            <label for="nombre">AP. Paterno    Ap.Materno    Nombre(s)</label>
+            <input type="text" class="form-control" name="nombre" id="nombre" placeholder="AP. Paterno    Ap.Materno    Nombre(s)">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-7">
+            <label for="domicilio">Domicilio</label>
+            <input type="text" class="form-control" name="domicilio" id="domicilio" placeholder="Calle y No. - Colonia - Cod. Postal">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="rfc">RFC</label>
+            <input type="text" class="form-control" name="rfc" id="rfc" placeholder="0101010101">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-2">
+            <label for="telefono">Telefono</label>
+        <input type="text" class="form-control" name="telefono" id="telefono" placeholder="999-999-9999">
+        </div>
+        <div class="form-group col-md-3">
+            <label for="correoe">Correo Electronico</label>
+            <input type="email" class="form-control" name="correoe" id="correoe" placeholder="correo@gmail.com">
+        </div>
+
+        <div class="form-group col-md-1">
+            <label for="edad">Edad</label>
+        <input type="text" class="form-control" name="edad" id="edad" placeholder="edad">
+        </div>
+        <div class="form-group col-md-1">
+            <label for="nss">N.S.S</label>
+            <input type="text" class="form-control" name="nss" id="nss" placeholder="N.S.S">
+        </div>
+        <div class="form-group col-md-2">
+            <label for="sexo">Sexo</label>
+            <select name="sexo" id="sexo" class="form-control">
+                <option value="0">Choose...</option>
+                <option value="F">Femenino</option>
+                <option value="M">Masculino</option>
+            </select>
+        </div>
+        <div class="form-group col-md-2">
+            <label for="edociv">E. Civil</label>
+            <select name="edociv" id="edociv" class="form-control">
+                <option value="0">Choose...</option>
+                {% for estado in ecivil %}
+                    <option value="{{ estado.0 }}">{{ estado.1 }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary" style="background:lightseagreen">Agregar</button>
+    <script type="text/javascript" src="/static/js/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="/static/js/popper.min.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+</form>
+
+
+</body>
+{% endblock %}

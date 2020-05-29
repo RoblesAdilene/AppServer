@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block content %}
+<head>
+
+</head>
+<body style="background-color:#D5DBDB;">
+<link rel="stylesheet" href="\static\css\tabla2.css">
+<center><h3>Datos de la empresa</h3></center>
+<div id="main-container">
+      <table width="100%" border="1" cellpadding="0" cellspacing="0">
+        <tr>
+          <td color="FFFFFF" bgcolor="#465F5A" valign="top">
+            <table width="100%" border="1" cellpadding="0" cellspacing="0">
+              <thead>
+              <tr>
+                    <td color="white" bgcolor="006666"><font color="white">Empresa</font></td>
+                  <td color="white" bgcolor="006666"><font color="white"></font></td>
+                </tr>
+              </thead>
+              <tbody>
+                {% for nivel in niveles %}
+                  <tr>
+                    <td>
+                      {{ nivel.0 }}
+                    </td>
+                    <td bgcolor="#9C9C9C" width="60">
+                      <center><a href="/ed_datos_empresa/{{nivel.0}}" class="btn btn-success" style="background:lightseagreen">Editar</a></center>
+                    </td>
+
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+
+
+          <script type="text/javascript" src="/static/js/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="/static/js/popper.min.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+    </table>
+</div>
+</body>
+
+{% endblock %}

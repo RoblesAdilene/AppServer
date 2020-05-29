@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<head>
+    <title>HOME-INT</title>
+</head>
+<body style="background-color:#D5DBDB;">
+<form action="/modifica_solicitud/{{solicitudes.0}}" method="post">
+<h1>Editar Solicitud de Personal</h1>
+    <script type="text/javascript" src="/static/js/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="/static/js/popper.min.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+    <div class="form-row">
+        &nbsp;&nbsp;&nbsp;
+        <div class="form-group col-md-2">
+            <label for="fecha">Fecha de Solicitud</label>
+            <input type="date" class="form-control" name="fecha" id="fecha">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="area_sol">Area</label>
+            <select name="area_sol" id="area_sol" class="form-control">
+                {% for area in areas %}
+                    {% if solicitudes.0[3]==area.0%}
+                        <option value="{{ area.0 }}" selected="true">{{ area.1 }}</option>
+                    {% else %}
+                        <option value="{{ area.0 }}">{{ area.1 }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>&nbsp;
+        </div>
+        <div class="form-group col-md-4">
+            <label for="Puesto_sol">Puesto</label>
+            <select name="Puesto_sol" id="Puesto_sol" class="form-control">
+                {% for puesto in puestos %}
+                    {% if solicitudes.0[4]==puesto.0%}
+                        <option value="{{ puesto.0 }}" selected="true">{{ puesto.1 }}</option>
+                    {% else %}
+                        <option value="{{ puesto.0 }}">{{ puesto.1 }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>&nbsp;
+        </div>
+    </div>
+    <div class="form-row">
+        &nbsp;&nbsp;&nbsp;
+        <div class="form-group col-md-4">
+            <label for="Nivel_sol">Nivel Academico</label>
+            <select name="Nivel_sol" id="Nivel_sol" class="form-control">
+                {% for nivel in niveles %}
+                    {% if solicitudes.0[5]==nivel.0 %}
+                        <option value="{{ nivel.0 }}" selected="true">{{ nivel.1 }}</option>
+                    {% else %}
+                        <option value="{{ nivel.0 }}">{{ nivel.1 }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>&nbsp;
+        </div>
+        <div class="form-group col-md-4">
+            <label for="Carrera_sol">Carrera/Especialidad</label>
+            <select name="Carrera_sol" id="Carrera_sol" class="form-control">
+                {% for carrera in carreras %}
+                    {% if solicitudes.0[6]==carrera.0 %}
+                        <option value="{{ carrera.0 }}" selected="true">{{ carrera.1 }}</option>
+                    {% else %}
+                        <option value="{{ carrera.0 }}">{{ carrera.1 }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>&nbsp;
+        </div>
+    </div>
+    <div class="form-group col-md-4">
+        <label for="Estatus_sol">Estado de la Solicitud</label>
+        <select name="Estatus_sol" id="Estatus_sol" class="form-control">
+            {% for estado in estados  %}
+                {% if solicitudes.0[7]==estado.0 %}
+                    <option value="{{ estado.0 }}" selected="true">{{ estado.1 }}</option>
+                {% else %}
+                    <option value="{{ estado.0 }}">{{ estado.1 }}</option>
+                {% endif %}
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group col-md-2">
+        <label for="Vacantes_sol">Numero de Vacantes</label>
+       
+            <input type="text" class="form-control" name="Vacantes_sol" id="Vacantes_sol" value="{{ vacantes.0 }}">
+        
+        
+    </div>
+    &nbsp;&nbsp;&nbsp;
+    <button type="submit" class="btn btn-primary" style="background:lightseagreen">Enviar Cambios</button>
+</form>
+</body>
+{% endblock %}

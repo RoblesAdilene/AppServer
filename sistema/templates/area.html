@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block content %}
+<body style="background-color:#D5DBDB;">
+<form action="/area_agr" method="post">
+<h1>Area</h1>
+
+<div class="form-row">
+    <label for="nom_area">Nombre del Area</label>
+</div>
+
+<div class="form-row">
+    <div class="col">
+        <input type="text" class="form-control" name="nom_area" id="nom_area" placeholder="Nombre del area">
+    </div>
+</div>
+
+<div class="form-row">
+    <label for="desc">Descripcion</label>
+</div>
+<div class="form-row">
+    <div class="col">
+        <input type="text" class="form-control" name="desc" id="desc" placeholder="Descripcion">
+    </div>
+</div>
+        <button type="submit" class="btn btn-primary"
+                style="background-color:lightseagreen!important"><font color="white">Agregar</font></button>
+    <script type="text/javascript" src="/static/js/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="/static/js/popper.min.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+    </form>
+</body>
+{% endblock %}

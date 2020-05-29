@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<head><title>HOME-INT</title></head>
+<body>
+<form action="/agrega_perfil" method="post">
+            <p><h1>Perfil</h1><p>
+            <p><h4>Descripción</h4><p>
+            <textarea class="form-control" name="descripcion" rows="3" cols="65" placeholder="Descripcion" ></textarea>
+            <br>
+            <br>
+            <select id="puesto" name="puesto" >
+                <option value="Puesto">Puesto </option>
+                {% for puesto in puestos %}
+                 <option value="{{puesto.0}}">{{puesto.0}}</option>
+                {% endfor %}
+            </select>
+       
+            <select id="Nivel_academico" name="Nivel_academico" >
+                <option value="Nivel Academico">Nivel Academico</option>
+                {% for nivel in niveles %}
+                 <option value="{{nivel.0}}">{{nivel.0}}</option>
+                {% endfor %}
+            </select>
+           
+            <select id="Carrera" name="Carrera" >
+                <option value="Carrera">Carrera</option>
+                {% for carrera in carreras %}
+                 <option value="{{carrera.0}}">{{carrera.0}}</option>
+                {% endfor %}
+            </select>
+     
+            <select id="idioma" name="idioma" >
+                <option value="Idioma">Idioma</option>
+                {% for idioma in idiomas %}
+                 <option value="{{idioma.0}}">{{idioma.0}}</option>
+                {% endfor %}
+            </select>
+            <br>
+            <br>
+            <button type="submit" class="btn btn-primary" style="background-color: lightseagreen!important;">Agregar</button>
+<script type="text/javascript" src="/static/js/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="/static/js/popper.min.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+     </form>
+</body>
+{% endblock %}

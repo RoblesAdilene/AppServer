@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block content %}
+<body style="background-color:#D5DBDB;">
+<link rel="stylesheet" href="static/css/tabla2.css" />
+<a href="/carrera" class="btn btn-success" style="background:lightseagreen">Agregar Carrera</a>
+<center><h3 style="color:#FFFFFF;"><font color="black">Carreras registradas</font></h3></center>
+<div id="main-container">
+<table width="100%" border="1" cellpadding="0" cellspacing="0" bordercolor="#000000">
+	<tbody>
+		<tr>
+			<td color="FFFFFF" bgcolor="#465F5A" valign="top">
+            <table width="100%" border="1" cellpadding="0" cellspacing="0" bordercolor="#000000">
+            	<thead>
+            		<tr>
+            			<td style="color:#FFFFFF;" bgcolor="006666">Descripcion</td>
+            			<td style="color:#FFFFFF;" bgcolor="006666"></td>
+            			<td style="color:#FFFFFF;" bgcolor="006666"></td>
+            		</tr>
+            	</thead>
+                	<tbody>
+               		{% for nivel in niveles %}
+                  	<tr>
+                    	<td>
+                    		{{ nivel.1 }}
+                    	</td>
+                    	<td bgcolor="#9C9C9C" width="60">
+                    		<center><a href="/ed_carrera/{{nivel.0}}"  class="btn btn-success" style="background:lightseagreen">Editar</a></center>
+                    	</td>
+                    	<td  bgcolor="#BFBFBF" width="60">
+                    		<center><a href="/bo_carrera/{{nivel.0}}"  class="btn btn-success" style="background:lightseagreen">Borrar</a></center>
+                    	</td>
+                  	</tr>
+                	{% endfor %}
+				</tbody>
+			</table>
+			</td>
+	</tbody>
+		</tr>
+        <script type="text/javascript" src="/static/js/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="/static/js/popper.min.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+</table>
+</div>
+</body>
+{% endblock %}
